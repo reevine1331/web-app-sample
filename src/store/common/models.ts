@@ -1,13 +1,7 @@
 export interface IcommonState {
-  videoId: string;
-  referenceVideoId: string;
-  lightMode: boolean;
-  fullScreen: boolean;
+  selectedTab: number
 }
 
 export class CommonState implements IcommonState {
-  videoId = "";
-  referenceVideoId = "";
-  lightMode = false;
-  fullScreen = false;
+  selectedTab = 1;
 }

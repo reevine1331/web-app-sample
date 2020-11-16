@@ -24,7 +24,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import firebase from "firebase";
 
 import TabComponent from "@/components/molecules/TabComponent.vue";
@@ -38,7 +38,6 @@ export default {
   },
   data() {
     return {
-      selectedTab: 1,
       tabList: [
         {
           id: 1,
@@ -86,45 +85,58 @@ export default {
       ],
     };
   },
+  computed: {
+    selectedTab(): number {
+      return (this as any).$store.state.common.selectedTab;
+    },
+  },
   methods: {
-    transHome() {
-      this.$router.replace("/home");
+    transHome(): void {
+      (this as any).$router.replace("/home");
     },
-    changeValue(formNumber, key, value) {
-      this.formData[formNumber - 1][key - 1].value = value;
+    changeValue(formNumber: number, key: number, value: number): void {
+      (this as any).formData[formNumber - 1][key - 1].value = value;
     },
-    selectTab(id) {
-      this.selectedTab = id;
+    selectTab(id: number): void {
+      (this as any).$store.commit("common/setSelectedTab", id);
     },
-    signUp() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(
-          this.formData[1][0].value,
-          this.formData[1][1].value
-        )
-        .then((user) => {
-          console.log(user);
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
+    signUp(): void {
+      (this as any).$store.dispatch("auth/signUp", {
+        id: (this as any).formData[1][0].value,
+        password: (this as any).formData[1][1].value,
+      });
+      // firebase
+      //   .auth()
+      //   .createUserWithEmailAndPassword(
+      //     (this as any).formData[1][0].value,
+      //     (this as any).formData[1][1].value
+      //   )
+      //   .then((user) => {
+      //     console.log(user);
+      //   })
+      //   .catch((error) => {
+      //     alert(error.message);
+      //   });
     },
-    signIn() {
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(
-          this.formData[0][0].value,
-          this.formData[0][1].value
-        )
-        .then(() => {
-          firebase
-            .auth()
-            .setPersistence(firebase.auth.Auth.Persistence.SESSION);
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
+    signIn(): void {
+      (this as any).$store.dispatch("auth/signIn", {
+        id: (this as any).formData[0][0].value,
+        password: (this as any).formData[0][1].value,
+      });
+      // firebase
+      //   .auth()
+      //   .signInWithEmailAndPassword(
+      //     (this as any).formData[0][0].value,
+      //     (this as any).formData[0][1].value
+      //   )
+      //   .then(() => {
+      //     firebase
+      //       .auth()
+      //       .setPersistence(firebase.auth.Auth.Persistence.SESSION);
+      //   })
+      //   .catch((error) => {
+      //     alert(error.message);
+      //   });
     },
   },
 };

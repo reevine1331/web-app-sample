@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     setClassSelected() {
-     const selected = this.selected;
+      const selected = this.selected;
       return function (id) {
         return selected === id ? "selected" : "";
       };

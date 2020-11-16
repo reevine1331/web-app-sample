@@ -1,7 +1,7 @@
-import { App } from "./app/models/App";
+import { IauthState } from "./auth/models";
 import { IcommonState } from "./common/models";
 
 export interface RootState {
-  app: App;
-  common: IcommonState;
+  auth: IauthState
+  common: IcommonState
 }

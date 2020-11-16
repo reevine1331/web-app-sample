@@ -2,12 +2,12 @@
   <div class="top-link" @click="transTop">ログアウト</div>
 </template>
 
-<script>
+<script lang="ts">
 export default {
   name: "AccountLink",
   methods: {
-    transTop() {
-      this.$router.push("/");
+    transTop(): void {
+      (this as any).$router.push("/");
     },
   },
 };
