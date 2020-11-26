@@ -4,7 +4,7 @@
       <header-logo />
     </div>
     <div>
-      <account-link />
+      <account-link :label="linkLabel" @click-event="signOut" />
     </div>
   </div>
 </template>
@@ -18,6 +18,14 @@ export default {
   components: {
     HeaderLogo,
     AccountLink,
+  },
+  props: {
+    linkLabel: String,
+  },
+  methods: {
+    signOut() {
+      this.$emit("sign-out");
+    },
   },
 };
 </script>

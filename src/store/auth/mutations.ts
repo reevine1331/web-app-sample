@@ -6,4 +6,10 @@ export const mutations: MutationTree<IauthState> = {
   init(state: IauthState) {
     Object.assign(state, new AuthState());
   },
+  setUserData(state, payload) {
+    state.user = payload;
+  },
+  setSigInState(state, payload) {
+    state.state = payload;
+  },
 };

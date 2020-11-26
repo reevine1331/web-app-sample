@@ -15,5 +15,6 @@ const firebaseConfig = {
  measurementId: "G-F9YRJJ8M1X"
 };
 firebase.initializeApp(firebaseConfig);
+firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
 
 createApp(App).use(store).use(router).mount('#app')

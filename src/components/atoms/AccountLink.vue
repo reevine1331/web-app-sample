@@ -1,13 +1,16 @@
 <template>
-  <div class="top-link" @click="transTop">ログアウト</div>
+  <div class="top-link" @click="clickEvent">{{ label }}</div>
 </template>
 
 <script lang="ts">
 export default {
   name: "AccountLink",
+  props: {
+    label: String,
+  },
   methods: {
-    transTop(): void {
-      (this as any).$router.push("/");
+    clickEvent(): void {
+      (this as any).$emit("click-event");
     },
   },
 };

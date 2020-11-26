@@ -9,3 +9,10 @@ declare module '*.vue' {
   const d: VueConstructor;
   export default d;
 }
+
+// import VueRouter from 'vue-router'
+// declare module 'vue/types/vue' {
+//   interface Vue {
+//     $router: VueRouter
+//   }
+// }
