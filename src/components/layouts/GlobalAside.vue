@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { ASIDE_MENU_LIST } from "@/mixins/asideMenuList.js";
+import { ASIDE_MENU_LIST } from "@/mixins/asideMenuList.ts";
 
 export default {
   name: "GlobalAside",
