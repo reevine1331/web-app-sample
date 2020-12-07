@@ -1,5 +1,5 @@
 export interface IcanvasState {
-  canvas: object;
+  canvas: Object;
   canvasList: Array<Object>;
 }
 

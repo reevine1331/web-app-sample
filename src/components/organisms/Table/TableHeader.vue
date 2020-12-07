@@ -26,7 +26,7 @@ export default defineComponent({
 .table-header {
   display: flex;
   width: 100%;
-  height: 44px;
+  height: 45px;
   border: 1px solid white;
   &-item {
     display: flex;
