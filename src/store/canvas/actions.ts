@@ -2,7 +2,8 @@ import { ActionTree } from "vuex";
 import { IcanvasState } from "./models";
 import { RootState } from "../RootState";
 
-import firebase from "firebase";
+import firebase from 'firebase/app';
+import "firebase/firestore";
 
 export const actions: ActionTree<IcanvasState, RootState> = {
   getCanvas() {

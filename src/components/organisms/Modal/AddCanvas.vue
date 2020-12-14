@@ -35,9 +35,7 @@ export default defineComponent({
     CommonButton,
   },
   computed: {
-    formData(): Array<Object> {
-      return (this as any).$store.state.canvas.canvas;
-    },
+ 
   },
   methods: {
     changeValue(formNumber: number, key: number, value: any) {
