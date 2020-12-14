@@ -2,32 +2,31 @@
   <div class="form-component">
     <div class="form-component-label">{{ form.label }}</div>
     <div class="form-component-content">
-      <keep-alive>
-        <component
-          :is="form.formType"
-          :value="form.value"
-          :id="form.id"
-          :formNumber="formNumber"
-          @change-value="changeValue"
-        />
-      </keep-alive>
+      <component
+        :is="form.formType"
+        :value="form.value"
+        :id="form.id"
+        @change-value="changeValue"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import TextField from "@/components/atoms/TextField.vue";
+import NumberField from "@/components/atoms/NumberField.vue";
 import PassField from "@/components/atoms/PassField.vue";
 
 export default {
   name: "FormComponent",
   components: {
     TextField,
+    NumberField,
     PassField,
   },
   props: {
     form: Object,
-    formNumber: Number,
+    formNumber: Number
   },
   methods: {
     changeValue(formNumber, key, value) {

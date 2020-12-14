@@ -45,7 +45,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .modal-frame {
   z-index: 1000;
-  width: 320px;
+  width: 400px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -80,13 +80,16 @@ export default defineComponent({
 
 .size-S {
   height: 160px;
+  width: 400px;
 }
 
 .size-M {
   height: 320px;
+  width: 400px;
 }
 
 .size-L {
-  height: 480px;
+  height: 640px;
+  width: 480px;
 }
 </style>
