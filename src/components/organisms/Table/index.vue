@@ -1,7 +1,7 @@
 <template>
   <div class="table">
     <table-header :data="header" />
-    <table-content :data="data" />
+    <table-content :data="data" :row="header" />
   </div>
 </template>
 
