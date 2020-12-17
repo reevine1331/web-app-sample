@@ -35,13 +35,18 @@ export default defineComponent({
     CommonButton,
   },
   computed: {
- 
+    formData() {
+      return (this as any).$store.state.canvas.canvas;
+    },
   },
   methods: {
     changeValue(formNumber: number, key: number, value: any) {
       (this as any).$store.commit("canvas/changeCanvasValue", { key, value });
     },
-    // addCanvas() {},
+    addCanvas() {
+      (this as any).$store.dispatch("canvas/addCanvas");
+      (this as any).$store.dispatch("modal/closeModal");
+    },
   },
 });
 </script>

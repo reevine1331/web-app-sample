@@ -1,7 +1,7 @@
 <template>
   <div class="table">
     <table-header :data="header" />
-    <table-content />
+    <table-content :data="data" />
   </div>
 </template>
 
@@ -19,6 +19,7 @@ export default defineComponent({
   },
   props: {
     header: Array,
+    data: Array,
   },
 });
 </script>

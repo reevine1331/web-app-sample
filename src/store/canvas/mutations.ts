@@ -8,5 +8,11 @@ export const mutations: MutationTree<IcanvasState> = {
   },
   changeCanvasValue(state, payload: { key: number, value: any }) {
     state.canvas[payload.key - 1].value = payload.value;
+  },
+  initCanvas(state) {
+    state.canvas = new CanvasState().canvas;
+  },
+  setCanvasList(state, payload) {
+    state.canvasList = payload;
   }
 };
