@@ -33,6 +33,7 @@ export default defineComponent({
    text-overflow: ellipsis;
    white-space: nowrap;
    overflow: hidden;
+   padding: 0px 8px;
   }
 }
 </style>
